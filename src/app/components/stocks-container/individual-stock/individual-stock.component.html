@@ -1,0 +1,37 @@
+<div class="individual-stock-container" *ngIf="stock">
+  <div class="stock-header">
+    <h3 class="title">{{ stock.profile.name }} ({{ stock.symbol }})</h3>
+    <span>
+      <button (click)="onRemove()">X</button>
+    </span>
+  </div>
+
+  <div class="stock-content">
+    <span class="content-column">
+      <p>
+        Change today:
+        <span>{{ stock.quote.pc > 0 ? '+' : '' }}</span>
+        <span>{{ stock.quote.pc }}%</span>
+      </p>
+      <p>
+        Current price:
+        <span>{{ stock.quote.c | currency: stock.profile.currency }}</span>
+      </p>
+    </span>
+
+    <span class="content-column">
+      <p>
+        Opening price:
+        <span>{{ stock.quote.o | currency: stock.profile.currency }}</span>
+      </p>
+      <p>
+        High price:
+        <span>{{ stock.quote.h | currency: stock.profile.currency }}</span>
+      </p>
+    </span>
+  </div>
+
+  <button class="social-button" routerLink="/sentiment/{{ stock.symbol }}">
+    Go to social sentiment details >
+  </button>
+</div>

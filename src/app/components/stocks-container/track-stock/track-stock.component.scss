@@ -1,0 +1,14 @@
+.track-stock-container {
+  border: 3px solid blue;
+  padding: 12px;
+  margin: 10px;
+
+  .prompt {
+    margin-top: 0;
+  }
+
+  .symbol-input {
+    width: 75px;
+    margin-right: 10px;
+  }
+}

@@ -1,0 +1,7 @@
+<div class="track-stock-container">
+  <h3 class="prompt">Enter the symbol of a stock to track (i.e. AAPL, TSLA, GOOGL)</h3>
+  <span>
+    <input class="symbol-input" type="text" maxlength="5" [formControl]="stockSymbolControl" />
+    <button (click)="onTrackStock()">Track Stock</button>
+  </span>
+</div>

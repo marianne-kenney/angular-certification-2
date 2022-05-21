@@ -1,0 +1,7 @@
+<div class="stocks-container">
+  <app-track-stock></app-track-stock>
+
+  <div *ngFor="let stock of stocksService.getStoredStocks()">
+    <app-individual-stock [stock]="stock"></app-individual-stock>
+  </div>
+</div>

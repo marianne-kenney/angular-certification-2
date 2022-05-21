@@ -1,0 +1,27 @@
+.individual-stock-container {
+  border: 5px solid purple;
+  border-radius: 10px;
+  padding: 12px;
+  margin: 10px;
+
+  .stock-header {
+    display: flex;
+    justify-content: space-between;
+
+    .title {
+      margin-top: 0;
+    }
+  }
+
+  .stock-content {
+    display: flex;
+
+    .content-column {
+      width: 50%;
+    }
+  }
+
+  .social-button {
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,25 @@
+<div class="stock-sentiment-container" *ngIf="stock">
+  <div class="individual-stock">
+    <div class="stock-header">
+      <h3 class="title">{{ stock.profile.name }} ({{ stock.symbol }})</h3>
+    </div>
+
+    <div class="stock-content">
+      <ng-container *ngFor="let sentiment of stock.sentiments">
+        <span class="content-column">
+          <p>{{ getMonthName(sentiment.year, sentiment.month) }}</p>
+          <p>
+            Change:
+            <span>{{ sentiment.change > 0 ? '+' : '' }}</span>
+            <span>{{ sentiment.change }}</span>
+          </p>
+          <p>MSPR: {{ sentiment.mspr }}</p>
+        </span>
+      </ng-container>
+    </div>
+
+    <p *ngIf="stock.sentiments.length == 0">No sentiments.</p>
+  </div>
+
+  <button class="back-button" routerLink="">< Back to list of stocks</button>
+</div>
