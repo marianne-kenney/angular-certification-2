@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { StockDetails } from '../../models/stock-details.model';
 import { StocksService } from '../../services/stocks.service';
 
 @Component({
@@ -8,7 +9,11 @@ import { StocksService } from '../../services/stocks.service';
   styleUrls: ['./stocks-container.component.scss'],
 })
 export class StocksContainerComponent implements OnInit {
+  public stocks: StockDetails[] = [];
+
   constructor(public stocksService: StocksService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.stocks = this.stocksService.getStoredStocks();
+  }
 }

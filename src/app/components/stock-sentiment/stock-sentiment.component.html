@@ -1,11 +1,11 @@
-<div class="stock-sentiment-container" *ngIf="stock">
-  <div class="individual-stock">
+<div class="stock-sentiment-container">
+  <div *ngIf="stock" class="individual-stock">
     <div class="stock-header">
       <h3 class="title">{{ stock.profile.name }} ({{ stock.symbol }})</h3>
     </div>
 
     <div class="stock-content">
-      <ng-container *ngFor="let sentiment of stock.sentiments">
+      <div *ngFor="let sentiment of stock.sentiments">
         <span class="content-container">
           <span>
             <p>{{ getMonthName(sentiment.year, sentiment.month) }}</p>
@@ -30,7 +30,7 @@
             >
           </span>
         </span>
-      </ng-container>
+      </div>
     </div>
 
     <p *ngIf="stock.sentiments.length == 0">No sentiments.</p>
