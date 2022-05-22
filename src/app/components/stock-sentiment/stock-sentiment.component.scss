@@ -11,9 +11,30 @@
 
     .stock-content {
       display: flex;
+      justify-content: space-between;
 
-      .content-column {
-        width: 33%;
+      .content-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 30%;
+
+        .content-arrow {
+          display: flex;
+          vertical-align: middle;
+
+          .arrow-icon {
+            font-weight: 900;
+
+            &.green {
+              color: green;
+            }
+
+            &.red {
+              color: red;
+            }
+          }
+        }
       }
     }
   }

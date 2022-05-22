@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ import { FinnhubApiService } from './services/finnhub-api.service';
     AppRoutingModule,
     HttpClientModule,
     AppRoutingModule,
+    MatIconModule,
   ],
   declarations: [
     AppComponent,

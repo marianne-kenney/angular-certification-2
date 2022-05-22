@@ -6,18 +6,29 @@
 
     <div class="stock-content">
       <ng-container *ngFor="let sentiment of stock.sentiments">
-        <span class="content-column">
-          <p>{{ getMonthName(sentiment.year, sentiment.month) }}</p>
-          <p>
-            Change:
-            <span>{{ sentiment.change > 0 ? '+' : '' }}</span>
-            <span>{{ sentiment.change }}</span>
-          </p>
-          <p>MSPR: {{ sentiment.mspr }}</p>
-        </span>
+        <span class="content-container">
+          <span>
+            <p>{{ getMonthName(sentiment.year, sentiment.month) }}</p>
+            <p>
+              Change:
+              <span>{{ sentiment.change > 0 ? '+' : '' }}</span>
+              <span>{{ sentiment.change }}</span>
+            </p>
+            <p>MSPR: {{ sentiment.mspr }}</p>
+          </span>
 
-        <span>
-          <img src="/assets/red-arrow.jpg" />
+          <span class="content-arrow">
+            <mat-icon
+              class="arrow-icon"
+              [ngClass]="{
+                green: sentiment.change > 0,
+                red: sentiment.change <= 0
+              }"
+              >{{
+                sentiment.change > 0 ? 'arrow_upward' : 'arrow_downward'
+              }}</mat-icon
+            >
+          </span>
         </span>
       </ng-container>
     </div>
