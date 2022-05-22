@@ -10,7 +10,5 @@ import { StocksService } from '../../services/stocks.service';
 export class StocksContainerComponent implements OnInit {
   constructor(public stocksService: StocksService) {}
 
-  ngOnInit() {
-    console.log(this.stocksService.getStoredStocks());
-  }
+  ngOnInit() {}
 }
